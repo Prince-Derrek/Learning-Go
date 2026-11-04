@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func Calculate() string {
 	//init method instances
 
 	arithmetic := services.ArithmeticService{}
@@ -36,5 +36,23 @@ func main() {
 	default:
 		fmt.Println("Wrong operator input. Please use either of these (+,-,*,/)")
 	}
+
+	continuance := ""
+	fmt.Println("\n\nWould you like to proceed (y if Yes, n if No)")
+	fmt.Scan(&continuance)
+
+	return continuance
+}
+
+func main() {
+	fmt.Println("Welcome to my new calculator! \n")
+
+	continuance := "y"
+
+	for continuance == "y" {
+		continuance = Calculate()
+	}
+
+	fmt.Println("\n\nThank you for using My Calculator")
 
 }
