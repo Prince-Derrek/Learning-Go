@@ -6,33 +6,31 @@ import (
 )
 
 func main() {
-	//user input
-	numberService := services.UserInput{}
-	num := numberService.Variant()
+	//init method instances
 
-	operandService := services.UserInput{}
-	oper := operandService.Operand()
+	arithmetic := services.ArithmeticService{}
+	input := services.UserInput{}
+
+	//user input
+	num := input.ReadNumbers()
+	oper := input.ReadOperand()
 
 	//operations
 	switch oper {
 	case "+":
-		sumService := services.ArithmeticService{}
-		sum := sumService.Sum(num[0], num[1])
+		sum := arithmetic.Sum(num[0], num[1])
 		fmt.Println("Sum:", sum)
 
 	case "-":
-		diffService := services.ArithmeticService{}
-		diff := diffService.Diff(num[0], num[1])
+		diff := arithmetic.Diff(num[0], num[1])
 		fmt.Println("Difference: ", diff)
 
 	case "*":
-		prodService := services.ArithmeticService{}
-		prod := prodService.Product(num[0], num[1])
+		prod := arithmetic.Product(num[0], num[1])
 		fmt.Println("Product: ", prod)
 
 	case "/":
-		divService := services.ArithmeticService{}
-		div := divService.Div(num[0], num[1])
+		div := arithmetic.Div(num[0], num[1])
 		fmt.Println("Quotient: ", div)
 
 	default:

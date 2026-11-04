@@ -4,7 +4,7 @@ import "fmt"
 
 type UserInput struct{}
 
-func (n UserInput) Variant() [2]int {
+func (n UserInput) ReadNumbers() [2]int {
 	num1 := 0
 	num2 := 0
 	fmt.Println("Enter the first number")
@@ -18,7 +18,7 @@ func (n UserInput) Variant() [2]int {
 	return numbersForOperation
 }
 
-func (o UserInput) Operand() string {
+func (o UserInput) ReadOperand() string {
 	oper := ""
 
 	fmt.Println("Enter the operation to be performed: (+,-,*,/)")
