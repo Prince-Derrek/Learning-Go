@@ -1,11 +1,11 @@
-package services
+package menu
 
 import "fmt"
 
 type MainMenu struct{}
 
-func (m MainMenu) Menu() string {
-	option := ""
+func (m MainMenu) Menu() int {
+	option := 0
 	// Calculator menu and start
 	fmt.Println(`
 	====================================

@@ -11,12 +11,13 @@ type PerformCalculation struct {
 	Input      input.UserInput
 }
 
-func Calculate() string {
+func (p PerformCalculation) Calculate() string {
 	//init method instances
 	arithmetic := arithmetic.ArithmeticService{}
 	input := input.UserInput{}
 
 	//user input
+	fmt.Println("=========================\nPlease follow the following instructions")
 	num, err := input.ReadNumbers()
 	if err != nil {
 		fmt.Println(err)

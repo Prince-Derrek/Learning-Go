@@ -11,7 +11,7 @@ func (n UserInput) ReadNumbers() ([2]int, error) {
 	num2 := 0
 
 	for {
-		fmt.Println("Enter the first number")
+		fmt.Println("\nEnter the first number")
 		if _, err := fmt.Scan(&num1); err != nil {
 			fmt.Println("Invalid Number Entered!! \nTry Again!")
 			continue
