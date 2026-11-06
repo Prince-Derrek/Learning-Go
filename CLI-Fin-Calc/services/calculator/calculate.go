@@ -49,6 +49,7 @@ func (p PerformCalculation) Calculate() string {
 	continuance := ""
 	fmt.Println("\n\nWould you like to proceed (y if Yes, n if No)")
 	fmt.Scan(&continuance)
+	fmt.Println("\n========================================================================================")
 
 	return continuance
 }
