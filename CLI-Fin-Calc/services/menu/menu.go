@@ -12,7 +12,7 @@ func (m MainMenu) Menu() string {
 			Financial Calculator
 	====================================
 
-	1. Perform Calculator
+	1. Perform Calculation
 	2. View Calculation History
 	3. View Statistics
 	4. Clear History

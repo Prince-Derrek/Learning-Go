@@ -1,7 +1,6 @@
-package services
+package input
 
 import (
-	"errors"
 	"fmt"
 )
 
@@ -14,7 +13,8 @@ func (n UserInput) ReadNumbers() ([2]int, error) {
 	for {
 		fmt.Println("Enter the first number")
 		if _, err := fmt.Scan(&num1); err != nil {
-			return [2]int{}, errors.New("Invalid first number!")
+			fmt.Println("Invalid Number Entered!! \nTry Again!")
+			continue
 		}
 		break
 	}
@@ -22,7 +22,8 @@ func (n UserInput) ReadNumbers() ([2]int, error) {
 	for {
 		fmt.Println("Enter the second number")
 		if _, err := fmt.Scan(&num2); err != nil {
-			return [2]int{}, errors.New("Invalid first number!")
+			fmt.Println("Invalid Number Entered!! \nTry Again!")
+			continue
 		}
 		break
 	}
@@ -35,8 +36,14 @@ func (n UserInput) ReadNumbers() ([2]int, error) {
 func (o UserInput) ReadOperand() string {
 	oper := ""
 
-	fmt.Println("Enter the operation to be performed: (+,-,*,/)")
-	fmt.Scan(&oper)
+	for {
+		fmt.Println("Enter the operation to be performed: (+,-,*,/)")
+		if _, err := fmt.Scan(&oper); err != nil {
+			fmt.Println("Invalid Operand! \nTry Again!")
+			continue
+		}
+		break
+	}
 
 	return oper
 }
