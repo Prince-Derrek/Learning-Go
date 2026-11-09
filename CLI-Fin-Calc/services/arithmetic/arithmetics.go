@@ -56,7 +56,9 @@ func (s ArithmeticService) Modulus(num1, num2 int) float64 {
 }
 
 func (s ArithmeticService) Percentage(num1, num2 int) int {
-	return (num1 / num2) * 100
+	percent := (num2 * 100) / num1
+
+	return percent
 }
 
 func (s ArithmeticService) Average(nums []int) int {

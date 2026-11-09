@@ -68,7 +68,7 @@ func (p PerformCalculation) Calculate() string {
 			fmt.Println(err)
 		}
 		percent := arithmetic.Percentage(num[0], num[1])
-		fmt.Printf("If %v is 100%% then %v is %v percent of %v ", num[0], num[1], percent, num[0])
+		fmt.Printf("If %v is 100%% then %v is %v %% of %v ", num[0], num[1], percent, num[0])
 
 	case 7:
 		fmt.Println("Enter any number of integers")
