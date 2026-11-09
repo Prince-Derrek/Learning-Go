@@ -33,11 +33,22 @@ func (n UserInput) ReadNumbers() ([2]int, error) {
 	return numbersForOperation, nil
 }
 
-func (o UserInput) ReadOperand() string {
-	oper := ""
+func (o UserInput) ReadOperand() int {
+	oper := 0
 
 	for {
-		fmt.Println("Enter the operation to be performed: (+,-,*,/)")
+		fmt.Println(`
+		Enter the operation to be performed:
+		1. Addition
+		2. Subtraction
+		3. Product
+		4. Division
+		5. Modulus
+		6. Percentage Calculation
+		7. Average of multiple numbers
+		8. Minimum of multiple numbers
+		9. Maximum of multiple numbers
+		`)
 		if _, err := fmt.Scan(&oper); err != nil {
 			fmt.Println("Invalid Operand! \nTry Again!")
 			continue
@@ -46,4 +57,24 @@ func (o UserInput) ReadOperand() string {
 	}
 
 	return oper
+}
+
+func (m UserInput) ReadMultipleIntegers() []int {
+	numbersToOperate := 0
+	fmt.Println("How many numbers would you like to enter:")
+	fmt.Scan(&numbersToOperate)
+
+	//Create a slice that can accept multiple inputs
+	num := make([]int, 0, numbersToOperate)
+
+	for i := 0; i < numbersToOperate; i++ {
+		var number int
+
+		fmt.Printf("Enter number %d: ", i+1)
+		fmt.Scan(&number)
+
+		num = append(num, number)
+	}
+
+	return num
 }

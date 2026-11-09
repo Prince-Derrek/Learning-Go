@@ -49,25 +49,30 @@ func (s ArithmeticService) Div(num1, num2 int) int {
 	return result
 }
 
-func (s ArithmeticService) Modulus(num1, num2 float64) float64 {
-	return math.Mod(num1, num2)
+func (s ArithmeticService) Modulus(num1, num2 int) float64 {
+	var no1 = float64(num1)
+	var no2 = float64(num2)
+	return math.Mod(no1, no2)
 }
 
-func (s ArithmeticService) Percentage(num1, num2 float64) float64 {
+func (s ArithmeticService) Percentage(num1, num2 int) int {
 	return (num1 / num2) * 100
 }
 
-func (s ArithmeticService) Average(nums ...float64) float64 {
-	numberOfInputs := float64(len(nums))
-	sum := 0.0
+func (s ArithmeticService) Average(nums []int) int {
+	numberOfInputs := len(nums)
+	if numberOfInputs == 0 {
+		return 0
+	}
+	sum := 0
 	for num := range nums {
-		sum += float64(num)
+		sum += (num)
 	}
 
 	return sum / numberOfInputs
 }
 
-func (s ArithmeticService) Minimum(nums ...int) int {
+func (s ArithmeticService) Minimum(nums []int) int {
 	minimum := nums[0]
 
 	for _, num := range nums {
@@ -79,7 +84,7 @@ func (s ArithmeticService) Minimum(nums ...int) int {
 	return minimum
 }
 
-func (s ArithmeticService) Maximum(nums ...int) int {
+func (s ArithmeticService) Maximum(nums []int) int {
 	maximum := nums[0]
 
 	for _, num := range nums {

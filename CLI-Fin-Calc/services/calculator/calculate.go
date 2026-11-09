@@ -18,30 +18,75 @@ func (p PerformCalculation) Calculate() string {
 
 	//user input
 	fmt.Println("=========================\nPlease follow the following instructions")
-	num, err := input.ReadNumbers()
-	if err != nil {
-		fmt.Println(err)
-	}
 	oper := input.ReadOperand()
 
 	//operations
 	switch oper {
-	case "+":
+	case 1:
+		num, err := input.ReadNumbers()
+		if err != nil {
+			fmt.Println(err)
+		}
 		sum := arithmetic.Sum(num[0], num[1])
 		fmt.Println("Sum:", sum)
 
-	case "-":
+	case 2:
+		num, err := input.ReadNumbers()
+		if err != nil {
+			fmt.Println(err)
+		}
 		diff := arithmetic.Diff(num[0], num[1])
 		fmt.Println("Difference: ", diff)
 
-	case "*":
+	case 3:
+		num, err := input.ReadNumbers()
+		if err != nil {
+			fmt.Println(err)
+		}
 		prod := arithmetic.Product(num[0], num[1])
 		fmt.Println("Product: ", prod)
 
-	case "/":
+	case 4:
+		num, err := input.ReadNumbers()
+		if err != nil {
+			fmt.Println(err)
+		}
 		div := arithmetic.Div(num[0], num[1])
 		fmt.Println("Quotient: ", div)
 
+	case 5:
+		num, err := input.ReadNumbers()
+		if err != nil {
+			fmt.Println(err)
+		}
+		mod := arithmetic.Modulus(num[0], num[1])
+		fmt.Printf("%v mod %v = %v", num[0], num[1], mod)
+
+	case 6:
+		num, err := input.ReadNumbers()
+		if err != nil {
+			fmt.Println(err)
+		}
+		percent := arithmetic.Percentage(num[0], num[1])
+		fmt.Printf("If %v is 100%% then %v is %v percent of %v ", num[0], num[1], percent, num[0])
+
+	case 7:
+		fmt.Println("Enter any number of integers")
+		numbers := input.ReadMultipleIntegers()
+		average := arithmetic.Average(numbers)
+		fmt.Printf("The average of the numbers is: %v", average)
+
+	case 8:
+		fmt.Println("Enter any number of integers")
+		numbers := input.ReadMultipleIntegers()
+		minimum := arithmetic.Minimum(numbers)
+		fmt.Printf("The minimum of the numbers is: %v", minimum)
+
+	case 9:
+		fmt.Println("Enter any number of integers")
+		numbers := input.ReadMultipleIntegers()
+		maximum := arithmetic.Maximum(numbers)
+		fmt.Printf("The maximum of the numbers is: %v", maximum)
 	default:
 		fmt.Println("Wrong operator input. Please use either of these (+,-,*,/)")
 	}
