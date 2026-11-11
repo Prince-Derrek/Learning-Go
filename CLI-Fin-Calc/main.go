@@ -119,7 +119,11 @@ func main() {
 			default:
 				fmt.Println("Invalid Option for Statistics")
 			}
-
+		case 4:
+			histService.Clear()
+			fmt.Println("All results have been cleared")
+		default:
+			fmt.Println("\nThank you for using my calculator!!")
 		}
 	}
 }
