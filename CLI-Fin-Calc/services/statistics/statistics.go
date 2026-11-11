@@ -20,9 +20,14 @@ Average of all recorded results
 // Calculating total calculations performed
 func (s CalculationStatistics) Total() int {
 	totalHistory := s.HistoryService.GetAll()
-	totalCalculations := len(totalHistory)
 
-	return totalCalculations
+	noOfOperations := 0
+
+	for _, records := range totalHistory {
+		noOfOperations += len(records)
+	}
+
+	return noOfOperations
 }
 
 // Calculating Specific operation calculations
@@ -74,14 +79,14 @@ func (s CalculationStatistics) AverageResult() float64 {
 	totalHistory := s.HistoryService.GetAll()
 
 	summation := 0.0
+	noOfOps := 0
 
 	for _, records := range totalHistory {
+		noOfOps += len(records)
 		for _, record := range records {
 			summation += record.Result
 		}
 	}
-
-	noOfOps := len(totalHistory)
 
 	average := summation / float64(noOfOps)
 
