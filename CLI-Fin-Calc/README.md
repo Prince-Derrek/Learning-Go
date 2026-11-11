@@ -1,6 +1,6 @@
 # CLI Calculator
 
-CLI-Fin-Calc is an interactive, terminal-based calculator written in Go. It supports basic arithmetic and a few calculations over multiple integers, and keeps calculation history and statistics for the current run.
+CLI Calculator is an interactive, terminal-based calculator written in Go. It supports basic arithmetic and a few calculations over multiple integers, and keeps calculation history and statistics for the current run.
 
 ## Requirements
 
