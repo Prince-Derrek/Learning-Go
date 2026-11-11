@@ -33,39 +33,39 @@ func main() {
 			histOption := userInput.ReadSpecificHistory()
 			switch histOption {
 			case 1:
-				additionHistory := histService.Get("addition")
+				additionHistory := histService.Get(history.Addition)
 				fmt.Printf("Addition History: \n %v", additionHistory)
 
 			case 2:
-				subtractionHistory := histService.Get("subtraction")
+				subtractionHistory := histService.Get(history.Subtraction)
 				fmt.Printf("Subtraction History: \n %v", subtractionHistory)
 
 			case 3:
-				productHistory := histService.Get("multiplication")
+				productHistory := histService.Get(history.Multiplication)
 				fmt.Printf("Product History: \n %v", productHistory)
 
 			case 4:
-				divisionHistory := histService.Get("division")
+				divisionHistory := histService.Get(history.Division)
 				fmt.Printf("Division History: \n %v", divisionHistory)
 
 			case 5:
-				modulusHistory := histService.Get("modulus")
+				modulusHistory := histService.Get(history.Modulus)
 				fmt.Printf("Modulus History: \n %v", modulusHistory)
 
 			case 6:
-				percentageHistory := histService.Get("percentage")
+				percentageHistory := histService.Get(history.Percentage)
 				fmt.Printf("Percentage History: \n %v", percentageHistory)
 
 			case 7:
-				averageHistory := histService.Get("average")
+				averageHistory := histService.Get(history.Average)
 				fmt.Printf("Average History: \n %v", averageHistory)
 
 			case 8:
-				minimumHistory := histService.Get("minimum")
+				minimumHistory := histService.Get(history.Minimum)
 				fmt.Printf("Minimum History: \n %v", minimumHistory)
 
 			case 9:
-				maximumHistory := histService.Get("maximum")
+				maximumHistory := histService.Get(history.Maximum)
 				fmt.Printf("Maximum History: \n %v", maximumHistory)
 
 			case 10:

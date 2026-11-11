@@ -33,7 +33,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Println("Sum:", sum)
 
 		//Preserve Addition History
-		p.HistoryService.Add("addition", history.CalculationRecord{
+		p.HistoryService.Add(history.Addition, history.CalculationRecord{
 			Operands: []int{num[0], num[1]},
 			Result:   float64(sum),
 		})
@@ -47,7 +47,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Println("Difference: ", diff)
 
 		//Preserve Subtraction Histort
-		p.HistoryService.Add("subtraction", history.CalculationRecord{
+		p.HistoryService.Add(history.Subtraction, history.CalculationRecord{
 			Operands: []int{num[0], num[1]},
 			Result:   float64(diff),
 		})
@@ -61,7 +61,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Println("Product: ", prod)
 
 		//Preserve Multiplication History
-		p.HistoryService.Add("multiplication", history.CalculationRecord{
+		p.HistoryService.Add(history.Multiplication, history.CalculationRecord{
 			Operands: []int{num[0], num[1]},
 			Result:   float64(prod),
 		})
@@ -75,7 +75,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Println("Quotient: ", div)
 
 		//Preserve Division History
-		p.HistoryService.Add("division", history.CalculationRecord{
+		p.HistoryService.Add(history.Division, history.CalculationRecord{
 			Operands: []int{num[0], num[1]},
 			Result:   float64(div),
 		})
@@ -89,7 +89,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Printf("%v mod %v = %v", num[0], num[1], mod)
 
 		//Preserve modulus history
-		p.HistoryService.Add("modulus", history.CalculationRecord{
+		p.HistoryService.Add(history.Modulus, history.CalculationRecord{
 			Operands: []int{num[0], num[1]},
 			Result:   float64(mod),
 		})
@@ -103,7 +103,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Printf("If %v is 100%% then %v is %v %% of %v ", num[0], num[1], percent, num[0])
 
 		//Preserve Percentage History
-		p.HistoryService.Add("percentage", history.CalculationRecord{
+		p.HistoryService.Add(history.Percentage, history.CalculationRecord{
 			Operands: []int{num[0], num[1]},
 			Result:   float64(percent),
 		})
@@ -116,7 +116,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Printf("The average of the numbers is: %v", average)
 
 		//Preserve Avg History
-		p.HistoryService.Add("average", history.CalculationRecord{
+		p.HistoryService.Add(history.Average, history.CalculationRecord{
 			Operands: numbers,
 			Result:   float64(average),
 		})
@@ -128,7 +128,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Printf("The minimum of the numbers is: %v", minimum)
 
 		//Preserve Minimum history
-		p.HistoryService.Add("minimum", history.CalculationRecord{
+		p.HistoryService.Add(history.Minimum, history.CalculationRecord{
 			Operands: numbers,
 			Result:   float64(minimum),
 		})
@@ -140,7 +140,7 @@ func (p PerformCalculation) Calculate() string {
 		fmt.Printf("The maximum of the numbers is: %v", maximum)
 
 		//Preserve maximum history
-		p.HistoryService.Add("maximum", history.CalculationRecord{
+		p.HistoryService.Add(history.Maximum, history.CalculationRecord{
 			Operands: numbers,
 			Result:   float64(maximum),
 		})
