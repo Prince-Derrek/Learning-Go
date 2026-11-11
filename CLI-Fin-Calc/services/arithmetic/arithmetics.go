@@ -17,14 +17,8 @@ func (s ArithmeticService) Sum(nums ...int) int {
 
 }
 
-func (s ArithmeticService) Diff(nums ...int) int {
-	total := 0
-
-	for _, num := range nums {
-		total -= num
-	}
-
-	return total
+func (s ArithmeticService) Diff(num1, num2 int) int {
+	return num1 - num2
 }
 
 func (s ArithmeticService) Product(nums ...int) int {
