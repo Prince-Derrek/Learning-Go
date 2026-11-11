@@ -34,18 +34,56 @@ func (s CalculationStatistics) SpecificTotals(operation string) int {
 }
 
 // Calculating largest result
-func (s CalculationStatistics) LargestResult() float64 {
+func (s CalculationStatistics) LargestResult() (float64, bool) {
 	totalHistory := s.HistoryService.GetAll()
 
-	largest := 0.0
+	var largest float64
+	found := false
 
 	for _, records := range totalHistory {
 		for _, record := range records {
-			if record.Result > largest {
+			if !found || record.Result > largest {
 				largest = record.Result
+				found = true
 			}
 		}
 	}
 
-	return largest
+	return largest, found
+}
+
+func (s CalculationStatistics) SmallestResult() (float64, bool) {
+	totalHistory := s.HistoryService.GetAll()
+
+	var smallest float64
+	found := false
+
+	for _, records := range totalHistory {
+		for _, record := range records {
+			if !found || record.Result < smallest {
+				smallest = record.Result
+				found = true
+			}
+		}
+	}
+
+	return smallest, found
+}
+
+func (s CalculationStatistics) AverageResult() float64 {
+	totalHistory := s.HistoryService.GetAll()
+
+	summation := 0.0
+
+	for _, records := range totalHistory {
+		for _, record := range records {
+			summation += record.Result
+		}
+	}
+
+	noOfOps := len(totalHistory)
+
+	average := summation / float64(noOfOps)
+
+	return average
 }

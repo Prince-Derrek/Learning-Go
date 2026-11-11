@@ -100,8 +100,22 @@ func main() {
 				totalDivisions := statService.SpecificTotals(history.Division)
 				fmt.Printf("Total Divisions Performed = %v", totalDivisions)
 			case 6:
-				largestResult := statService.LargestResult()
-				fmt.Printf("The Largest result obtained is : %v", largestResult)
+				largestResult, found := statService.LargestResult()
+				if found {
+					fmt.Println("Largest result:", largestResult)
+				} else {
+					fmt.Println("No calculation history available.")
+				}
+			case 7:
+				smallestResult, found := statService.SmallestResult()
+				if found {
+					fmt.Println("Smallest result: ", smallestResult)
+				} else {
+					fmt.Println("No Calculation history available")
+				}
+			case 8:
+				averageResult := statService.AverageResult()
+				fmt.Println("The average of the results is: ", averageResult)
 			default:
 				fmt.Println("Invalid Option for Statistics")
 			}

@@ -119,6 +119,8 @@ func (s UserInput) ReadStats() int {
 		4. Total Multiplications Performed
 		5. Total Divisions Performed
 		6. Largest Result Obtained
+		7. Smallest Result Obtained
+		8. Average of the Results
 		`)
 		if _, err := fmt.Scan(&statOption); err != nil {
 			fmt.Println("Invalid Option! \n Try Again!")
