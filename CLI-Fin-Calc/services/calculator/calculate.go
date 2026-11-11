@@ -72,7 +72,8 @@ func (p PerformCalculation) Calculate() string {
 
 	case 7:
 		fmt.Println("Enter any number of integers")
-		numbers := input.ReadMultipleIntegers()
+		var numbers []int
+		numbers = input.ReadMultipleIntegers()
 		average := arithmetic.Average(numbers)
 		fmt.Printf("The average of the numbers is: %v", average)
 

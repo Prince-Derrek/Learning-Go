@@ -61,17 +61,17 @@ func (s ArithmeticService) Percentage(num1, num2 int) int {
 	return percent
 }
 
-func (s ArithmeticService) Average(nums []int) int {
+func (s ArithmeticService) Average(nums []int) float64 {
 	numberOfInputs := len(nums)
 	if numberOfInputs == 0 {
 		return 0
 	}
 	sum := 0
-	for num := range nums {
-		sum += (num)
+	for _, num := range nums {
+		sum += num
 	}
 
-	return sum / numberOfInputs
+	return float64(sum) / float64(numberOfInputs)
 }
 
 func (s ArithmeticService) Minimum(nums []int) int {
