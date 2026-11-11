@@ -78,3 +78,32 @@ func (m UserInput) ReadMultipleIntegers() []int {
 
 	return num
 }
+
+func (h UserInput) ReadSpecificHistory() int {
+	fmt.Println("Enter the History you would like to retrieve \n")
+
+	history := 0
+
+	for {
+		fmt.Println(`
+		Enter the history to be retrieved:
+		1. Addition
+		2. Subtraction
+		3. Product
+		4. Division
+		5. Modulus
+		6. Percentage Calculation
+		7. Average of multiple numbers
+		8. Minimum of multiple numbers
+		9. Maximum of multiple numbers
+		10. Retrieve All calculation history
+		`)
+		if _, err := fmt.Scan(&history); err != nil {
+			fmt.Println("Invalid Operand! \nTry Again!")
+			continue
+		}
+		break
+	}
+
+	return history
+}
