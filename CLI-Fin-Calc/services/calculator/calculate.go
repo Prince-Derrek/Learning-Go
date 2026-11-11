@@ -51,7 +51,7 @@ func (p PerformCalculation) Calculate() string {
 		if err != nil {
 			fmt.Println(err)
 		}
-		div := arithmetic.Div(num[0], num[1])
+		div := arithmetic.Div(float64(num[0]), float64(num[1]))
 		fmt.Println("Quotient: ", div)
 
 	case 5:

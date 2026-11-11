@@ -31,8 +31,8 @@ func (s ArithmeticService) Product(nums ...int) int {
 	return total
 }
 
-func (s ArithmeticService) Div(num1, num2 int) int {
-	result := 0
+func (s ArithmeticService) Div(num1, num2 float64) float64 {
+	result := 0.0
 
 	if num1 > num2 {
 		result = num1 / num2
@@ -40,7 +40,7 @@ func (s ArithmeticService) Div(num1, num2 int) int {
 		result = num2 / num1
 	}
 
-	return result
+	return float64(result)
 }
 
 func (s ArithmeticService) Modulus(num1, num2 int) float64 {
