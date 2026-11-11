@@ -17,7 +17,7 @@ Smallest result
 Average of all recorded results
 */
 
-//Calculating total calculations performed
+// Calculating total calculations performed
 func (s CalculationStatistics) Total() int {
 	totalHistory := s.HistoryService.GetAll()
 	totalCalculations := len(totalHistory)
@@ -25,8 +25,7 @@ func (s CalculationStatistics) Total() int {
 	return totalCalculations
 }
 
-
-//Calculating Specific operation calculations
+// Calculating Specific operation calculations
 func (s CalculationStatistics) SpecificTotals(operation string) int {
 	specificHistory := s.HistoryService.Get(operation)
 	specificCalculations := len(specificHistory)
@@ -34,6 +33,19 @@ func (s CalculationStatistics) SpecificTotals(operation string) int {
 	return specificCalculations
 }
 
-//Calculating largest result
+// Calculating largest result
+func (s CalculationStatistics) LargestResult() float64 {
+	totalHistory := s.HistoryService.GetAll()
 
+	largest := 0.0
 
+	for _, records := range totalHistory {
+		for _, record := range records {
+			if record.Result > largest {
+				largest = record.Result
+			}
+		}
+	}
+
+	return largest
+}

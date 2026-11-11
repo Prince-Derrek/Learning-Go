@@ -99,6 +99,9 @@ func main() {
 			case 5:
 				totalDivisions := statService.SpecificTotals(history.Division)
 				fmt.Printf("Total Divisions Performed = %v", totalDivisions)
+			case 6:
+				largestResult := statService.LargestResult()
+				fmt.Printf("The Largest result obtained is : %v", largestResult)
 			default:
 				fmt.Println("Invalid Option for Statistics")
 			}
