@@ -5,6 +5,7 @@ import (
 	"CLI-Fin-Calc/services/history"
 	"CLI-Fin-Calc/services/input"
 	"CLI-Fin-Calc/services/menu"
+	"CLI-Fin-Calc/services/statistics"
 	"fmt"
 )
 
@@ -15,6 +16,10 @@ func main() {
 	calcService := calculate.PerformCalculation{
 		HistoryService: histService,
 	}
+	statService := statistics.CalculationStatistics{
+		HistoryService: histService,
+	}
+
 	userInput := input.UserInput{}
 
 	//Action for each option
@@ -75,6 +80,29 @@ func main() {
 			default:
 				fmt.Println("Invalid Choice of Calculation Records")
 			}
+
+		case 3:
+			statOption := userInput.ReadStats()
+			switch statOption {
+			case 1:
+				totalCalculations := statService.Total()
+				fmt.Printf("Total Calculations Performed = %v", totalCalculations)
+			case 2:
+				totalAdditions := statService.SpecificTotals(history.Addition)
+				fmt.Printf("Total Additions Performed = %v", totalAdditions)
+			case 3:
+				totalSubtractions := statService.SpecificTotals(history.Subtraction)
+				fmt.Printf("Total Subtractions Performed = %v", totalSubtractions)
+			case 4:
+				totalMultiplications := statService.SpecificTotals(history.Multiplication)
+				fmt.Printf("Total Multiplications Performed = %v", totalMultiplications)
+			case 5:
+				totalDivisions := statService.SpecificTotals(history.Division)
+				fmt.Printf("Total Divisions Performed = %v", totalDivisions)
+			default:
+				fmt.Println("Invalid Option for Statistics")
+			}
+
 		}
 	}
 }

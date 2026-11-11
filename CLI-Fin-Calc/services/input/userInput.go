@@ -107,3 +107,24 @@ func (h UserInput) ReadSpecificHistory() int {
 
 	return history
 }
+
+func (s UserInput) ReadStats() int {
+	statOption := 0
+	for {
+		fmt.Println(`
+		Which Statistic would you like:
+		1. Total Calculations Performed
+		2. Total Additions Performed
+		3. Total Subtractions Performed
+		4. Total Multiplications Performed
+		5. Total Divisions Performed
+		`)
+		if _, err := fmt.Scan(&statOption); err != nil {
+			fmt.Println("Invalid Option! \n Try Again!")
+			continue
+		}
+		break
+	}
+
+	return statOption
+}
