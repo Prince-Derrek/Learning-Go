@@ -6,6 +6,7 @@ type MainMenu struct{}
 
 func (m MainMenu) Menu() int {
 	option := 0
+
 	// Calculator menu and start
 	fmt.Println(`
 	====================================

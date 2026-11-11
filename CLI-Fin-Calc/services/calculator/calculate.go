@@ -19,7 +19,8 @@ func (p PerformCalculation) Calculate() string {
 	input := input.UserInput{}
 
 	//user input
-	fmt.Println("=========================\nPlease follow the following instructions")
+	fmt.Println("===================================================================")
+	fmt.Println("Please follow the following instructions")
 	oper := input.ReadOperand()
 
 	//operations
@@ -151,7 +152,7 @@ func (p PerformCalculation) Calculate() string {
 	continuance := ""
 	fmt.Println("\n\nWould you like to proceed (y if Yes, n if No)")
 	fmt.Scan(&continuance)
-	fmt.Println("\n========================================================================================5")
+	fmt.Println("\n========================================================================================")
 
 	return continuance
 }
